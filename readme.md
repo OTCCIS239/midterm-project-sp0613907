@@ -18,10 +18,7 @@ Using the data available in `my_guitar_shop.sql`, create a website that does the
         - Order Shipping Amt
         - Order Total
     - Create a listing of orders not yet shipped
-        - Click on that order and get order details
-            - Customer name
-            - Shipping Address
-            - Products Ordered
+    - Click on that order and get order details
 2. Create a Products page
     - Create a page that lists all products Organized by Category Type with price
     - Click on a product and see product name, description
@@ -29,7 +26,8 @@ Using the data available in `my_guitar_shop.sql`, create a website that does the
 
 ## Things to Consider
 
-- Seeing as you have many pages that will all required interaction with your database, consider creating a single `includes/db.php` file that returns a database connection.
+- Read the instructions in `includes/db.php` before connecting to your database!
+- Do not remove the `require('./includes/init.php')` from any of your pages. You may clean up the comments if you'd like.
 
 ## Re-Submission
 

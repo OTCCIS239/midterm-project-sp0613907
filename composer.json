@@ -1,0 +1,16 @@
+{
+    "name": "otccis239/midterm-project-template",
+    "description": "Midterm Project - My Guitar Shop",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^2.4",
+        "filp/whoops": "^2.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Engebretson",
+            "email": "engebrea@otc.edu"
+        }
+    ]
+}
