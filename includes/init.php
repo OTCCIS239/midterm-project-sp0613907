@@ -11,5 +11,9 @@ $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
 // Read ".env" file
-$dotenv = new Dotenv\Dotenv(__DIR__.'/..');
-$dotenv->load();
+try {
+    $dotenv = new Dotenv\Dotenv(__DIR__.'/..');
+    $dotenv->load();
+} catch (Exception $e) {
+    // No .env file found.
+}
