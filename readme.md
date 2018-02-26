@@ -31,6 +31,19 @@ Using the data available in `my_guitar_shop.sql`, create a website that does the
 
 ## Re-Submission
 
-If you find yourself unhappy with your grade on this project, I'll be allowing you to re-submit this project no later than April 9th, 2018 at 8:00am for partial credit (to be decided). If you chose to re-submit the project, it will have slightly different requirements, most significantly that your re-submission must be created in Laravel.
+If you find yourself unhappy with your grade on this project, I'll be allowing you to re-submit this project no later than April 9th, 2018 at 8:00am for re-evaluation. If you chose to re-submit the project, it will have slightly different requirements, most significantly that your re-submission must be created in Laravel.
 
-We will be covering Laravel for the second half of the semester.
+More details will be provided as we progress through Laravel after midterms.
+
+## License
+
+This exam is published under the MIT License.
+
+Dependency Licenses:
+
+```
+Name              Version  License
+filp/whoops       2.1.14   MIT
+psr/log           1.0.2    MIT
+vlucas/phpdotenv  v2.4.0   BSD-3-Clause-Attribution
+```

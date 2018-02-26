@@ -10,3 +10,7 @@
 // `/.env` by calling the `getenv($name)` function.
 // For example, use `getenv('DB_HOST')` to get the
 // host of your database. Yours should be "localhost"
+
+// Make sure to include support for DB_PORT. See the
+// PHP Documentation for the MySQL PDO DSN:
+// http://php.net/manual/en/ref.pdo-mysql.connection.php
