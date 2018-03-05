@@ -6,5 +6,34 @@
 require_once('../includes/init.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
+require_once('../includes/db.php');
+
+$query = 'SELECT CONCAT(firstName, " ", lastName) AS Name, emailAddress, orderDate
+          FROM customers
+          JOIN orders ON customers.customerID = orders.customerID';
+$statement = $conn->prepare($query);
+$statement->execute();
+$orders = $statement->fetchAll();
+$statement->closeCursor();
+
 
 ?>
+<?php include './views/header.php'; ?>
+  <body>
+      <div class="container">
+        <h1>All Orders</h1>
+        <table class="table">
+          <tbody>
+              <?php foreach ($orders as $order) : ?>
+                <tr>
+                <td><?php echo $order['Name'] ?></td>
+                <td><?php echo $order['emailAddress'] ?></td>
+                <td><?php echo $order['orderDate'] ?></td>
+                </tr>
+              <?php endforeach ?>
+          </tbody>
+        </table>
+        <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
+      </div>
+  </body>
+<?php include './views/footer.php'; ?>
