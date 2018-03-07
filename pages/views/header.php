@@ -1,6 +1,6 @@
 <?php
-require_once('../../includes/init.php');
-require_once('../../includes/db.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/init.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/init.php');
 
 //categories
 $query = 'SELECT * FROM categories ORDER BY categoryID';
@@ -36,7 +36,7 @@ $statement->closeCursor();
                     </a>
                 </li>
                 <?php endforeach?>
-                <li><a href="../pages/all_orders.php">Orders</a></li>
+                <li><a href="/midterm-project-sp0613907/pages/all_orders.php">Orders</a></li>
             </ul>
         </nav>
     </div>
