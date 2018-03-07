@@ -19,11 +19,14 @@ $statement->closeCursor();
 
 ?>
 <?php include './views/header.php'; ?>
-  <body>
-      <div class="container">
+  <div class="col-sm-6">
         <h1>All Orders</h1>
-        <table class="table">
-          <tbody>
+        <table class="table table-hover">
+          <thead class="thead-dark">
+              <th>Name</th>
+              <th>Email</th>
+              <th>Date</th>
+          </thead>
               <?php foreach ($orders as $order) : ?>
                 <tr>
                 <td><?php echo $order['Name'] ?></td>
@@ -31,9 +34,8 @@ $statement->closeCursor();
                 <td><?php echo $order['orderDate'] ?></td>
                 </tr>
               <?php endforeach ?>
-          </tbody>
         </table>
         <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
       </div>
-  </body>
+      <div class="col"></div>
 <?php include './views/footer.php'; ?>

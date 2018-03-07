@@ -1,3 +1,16 @@
+<?php
+require_once('../../includes/init.php');
+require_once('../../includes/db.php');
+
+//categories
+$query = 'SELECT * FROM categories ORDER BY categoryID';
+$statement = $conn->prepare($query);
+// $statement->bindValue(':category_id', $category_id);
+$statement->execute();
+$categories = $statement->fetchAll();
+$statement->closeCursor();
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,3 +24,19 @@
 <body>
 <div class="container">
 <h1>Welcome to The Pick of Destiny</h1>
+<div class="row">
+    <div class="col-sm-3">
+        <h2>Categories</h2>
+        <nav>
+            <ul>
+                <?php foreach($categories as $category) : ?>
+                <li>
+                    <a href="?category_id=<?php echo $category['categoryID']; ?>">
+                        <?php echo $category['categoryName'];?>
+                    </a>
+                </li>
+                <?php endforeach?>
+                <li><a href="../pages/all_orders.php">Orders</a></li>
+            </ul>
+        </nav>
+    </div>
