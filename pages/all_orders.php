@@ -19,6 +19,7 @@ $statement->closeCursor();
 
 ?>
 <?php include './views/header.php'; ?>
+
   <div class="col-sm-6">
         <h1>All Orders</h1>
         <table class="table table-hover">
@@ -28,14 +29,15 @@ $statement->closeCursor();
               <th>Date</th>
           </thead>
               <?php foreach ($orders as $order) : ?>
-                <tr>
+              <tr onclick="clickableRow()">
                 <td><?php echo $order['Name'] ?></td>
                 <td><?php echo $order['emailAddress'] ?></td>
                 <td><?php echo $order['orderDate'] ?></td>
-                </tr>
+              </tr>
               <?php endforeach ?>
         </table>
         <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
       </div>
       <div class="col"></div>
+
 <?php include './views/footer.php'; ?>
