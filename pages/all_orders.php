@@ -24,6 +24,7 @@ function clickableRow() {
 }
 </script> -->
 
+<div class="col-sm-2"></div>
   <div class="col-sm-8">
         <h3>All Orders</h3>
         <table class="table table-striped">
@@ -44,6 +45,5 @@ function clickableRow() {
         </table>
         <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
       </div>
-      <div class="col"></div>
 
 <?php include './views/footer.php'; ?>
