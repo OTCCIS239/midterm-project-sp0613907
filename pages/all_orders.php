@@ -7,32 +7,38 @@ require_once('../includes/init.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('../includes/db.php');
-
-$query = 'SELECT CONCAT(firstName, " ", lastName) AS Name, emailAddress, orderDate
+$orderID = 1;
+$query = 'SELECT orderID, CONCAT(firstName, " ", lastName) AS Name, emailAddress, orderDate
           FROM customers
           JOIN orders ON customers.customerID = orders.customerID';
 $statement = $conn->prepare($query);
+$statement->bindValue(':orderID', $orderID);
 $statement->execute();
 $orders = $statement->fetchAll();
 $statement->closeCursor();
-
-
 ?>
 <?php include './views/header.php'; ?>
+<!-- <script type="text/javascript">
+function clickableRow() {
+  document.location = "order_details.php?orderID";
+}
+</script> -->
 
-  <div class="col-sm-6">
+  <div class="col-sm-8">
         <h1>All Orders</h1>
-        <table class="table table-hover">
+        <table class="table table-striped">
           <thead class="thead-dark">
               <th>Name</th>
               <th>Email</th>
               <th>Date</th>
+              <th>       </th>
           </thead>
               <?php foreach ($orders as $order) : ?>
-              <tr onclick="clickableRow()">
+              <tr>
                 <td><?php echo $order['Name'] ?></td>
                 <td><?php echo $order['emailAddress'] ?></td>
                 <td><?php echo $order['orderDate'] ?></td>
+                <td><a href="order_details.php?orderID=<?php echo $order['orderID']?>">More Info</a></td>
               </tr>
               <?php endforeach ?>
         </table>
