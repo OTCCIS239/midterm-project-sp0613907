@@ -13,3 +13,14 @@ table tr td a:hover{
   background-color: #ff8080;
   text-decoration: none;
 }
+ul li{
+  display: inline-block;
+}
+ul li a{
+  text-decoration: none;
+  color: #ff3333;
+}
+ul li a:hover{
+  color: #ff8080;
+  text-decoration: none;
+}

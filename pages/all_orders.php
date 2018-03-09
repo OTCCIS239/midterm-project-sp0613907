@@ -25,7 +25,7 @@ function clickableRow() {
 </script> -->
 
   <div class="col-sm-8">
-        <h1>All Orders</h1>
+        <h3>All Orders</h3>
         <table class="table table-striped">
           <thead class="thead-dark">
               <th>Name</th>
