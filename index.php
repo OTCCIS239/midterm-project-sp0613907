@@ -36,8 +36,8 @@ require_once('./includes/db.php');
 
 ?>
 <?php include './pages/views/header.php'; ?>
-
-<div class="col">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
     <h2><?php echo $category_name?></h2>
     <table class="table table-striped">
         <thead class="thead-dark">
