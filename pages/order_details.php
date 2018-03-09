@@ -22,8 +22,8 @@ $statement->bindValue(':orderID', $orderID);
 $statement->execute();
 $details = $statement->fetchAll();
 $statement->closeCursor();
-// var_dump($orderID);
-// die();
+var_dump($orderID);
+die();
 ?>
 <?php include './header.php'; ?>
 <div class="col">
