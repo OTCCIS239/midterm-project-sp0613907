@@ -91,12 +91,14 @@ require_once('./includes/db.php');
         <thead class="thead-dark">
             <th>Name</th>
             <th>Description</th>
+            <th class="text-right">Price</th>
         </thead>
 
         <?php foreach($products as $product) : ?>
         <tr>
             <td><?php echo $product['productName']; ?></td>
             <td><?php echo $product['description']; ?></td>
+            <td><?php echo $product['listPrice']; ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
