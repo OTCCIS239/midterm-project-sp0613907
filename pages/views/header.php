@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/init.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/init.php');
+require_once('/midterm-project-sp0613907/includes/init.php');
+require_once('/midterm-project-sp0613907/includes/init.php');
 
 //categories
 $query = 'SELECT * FROM categories ORDER BY categoryID';
@@ -52,7 +52,7 @@ $statement->closeCursor();
           <li class="nav-item">
             <a class="nav-link" href="/midterm-project-sp0613907/pages/all_orders.php">Orders</a>
           </li><li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/midterm-project-sp0613907/pages/unshipped_orders.php">Unshipped</a>
           </li>
       <!-- </div> -->
     </nav>
