@@ -28,7 +28,7 @@ $statement->closeCursor();
           <thead class="thead-dark">
               <th>Name</th>
               <th>Email</th>
-              <th>Date</th>
+              <th>Order Date</th>
               <th>       </th>
           </thead>
               <?php foreach ($orders as $order) : ?>
