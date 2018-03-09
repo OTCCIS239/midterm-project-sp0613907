@@ -14,8 +14,8 @@ $query = 'SELECT orderDate, shipDate, cardNumber, CONCAT(line1, " ", line2, " ",
           FROM orders
           JOIN addresses ON orders.billingAddressID = addresses.addressID
           JOIN customers ON orders.customerID = customers.customerID
-          JOIN orderitems ON orders.orderID = orderitems.orderID
-          JOIN products ON orderitems.productID = products.productID
+          JOIN orderItems ON orders.orderID = orderItems.orderID
+          JOIN products ON orderItems.productID = products.productID
           WHERE orders.orderID = :orderID';
 $statement = $conn->prepare($query);
 $statement->bindValue(':orderID', $orderID);
