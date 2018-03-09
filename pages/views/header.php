@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'.:/app/.heroku/php/lib/php/midterm-project-sp0613907/includes/init.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'.:/app/.heroku/php/lib/php/midterm-project-sp0613907/includes/db.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/init.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/midterm-project-sp0613907/includes/db.php');
 
 //categories
 $query = 'SELECT * FROM categories ORDER BY categoryID';
