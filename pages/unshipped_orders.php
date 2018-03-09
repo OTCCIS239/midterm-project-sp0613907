@@ -19,7 +19,7 @@ $orders = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 
-<?php include './views/header.php'; ?>
+<?php include './header.php'; ?>
 
 <div class="col-sm-2"></div>
   <div class="col-sm-8">
@@ -43,4 +43,4 @@ $statement->closeCursor();
         <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
       </div>
 
-<?php include './views/footer.php'; ?>
+<?php include './footer.php'; ?>

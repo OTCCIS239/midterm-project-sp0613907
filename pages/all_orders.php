@@ -17,7 +17,7 @@ $statement->execute();
 $orders = $statement->fetchAll();
 $statement->closeCursor();
 ?>
-<?php include './views/header.php'; ?>
+<?php include './header.php'; ?>
 <!-- <script type="text/javascript">
 function clickableRow() {
   document.location = "order_details.php?orderID";
@@ -46,4 +46,4 @@ function clickableRow() {
         <a href="../index.php" class="btn btn-light btn-lg" role="button">Go Back</a>
       </div>
 
-<?php include './views/footer.php'; ?>
+<?php include './footer.php'; ?>

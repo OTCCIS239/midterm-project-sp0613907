@@ -25,7 +25,7 @@ $statement->closeCursor();
 // var_dump($orderID);
 // die();
 ?>
-<?php include './views/header.php'; ?>
+<?php include './header.php'; ?>
 <div class="col">
   <h3>Order Details</h3>
   <table class="table table-striped">
@@ -64,4 +64,4 @@ $statement->closeCursor();
 
 
 
-<?php include './views/footer.php'; ?>
+<?php include './footer.php'; ?>
