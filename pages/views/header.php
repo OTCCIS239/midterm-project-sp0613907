@@ -30,12 +30,6 @@ $statement->closeCursor();
       The Pick
     </a>
 
-
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-
-      <!-- <div class="collapse navbar-collaps" id="navbarSupportedContent"> -->
         <ul class="nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,7 +37,7 @@ $statement->closeCursor();
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($categories as $category): ?>
-                <a class="dropdown-item" href="?category_id=<?php echo $category['categoryID']; ?>">
+                <a class="dropdown-item" href="/midterm-project-sp0613907/index.php?categoryID=<?php echo $category['categoryID']; ?>">
                     <?php echo $category['categoryName'];?>
                 </a>
             <?php endforeach?>
@@ -54,22 +48,6 @@ $statement->closeCursor();
           </li><li class="nav-item">
             <a class="nav-link" href="/midterm-project-sp0613907/pages/unshipped_orders.php">Unshipped</a>
           </li>
-      <!-- </div> -->
     </nav>
 
 <div class="row">
-    <!-- <div class="col-sm-3">
-        <h2>Categories</h2>
-        <nav>
-            <ul>
-                <?php foreach($categories as $category) : ?>
-                <li>
-                    <a href="?category_id=<?php echo $category['categoryID']; ?>">
-                        <?php echo $category['categoryName'];?>
-                    </a>
-                </li>
-                <?php endforeach?>
-                <li><a href="/midterm-project-sp0613907/pages/all_orders.php">Orders</a></li>
-            </ul>
-        </nav>
-    </div> -->

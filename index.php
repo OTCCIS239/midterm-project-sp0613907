@@ -9,29 +9,26 @@ require_once('./includes/init.php');
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('./includes/db.php');
 
-    // $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
-    // if($category_id == null || $category_id == false){
-    //     $category_id = 1;
-    // }
+    $categoryID = filter_input(INPUT_GET, 'categoryID');
+    if($categoryID == null || $categoryID == false){
+        $categoryID = 1;
+    }
 
     //category
-    // $query = 'SELECT * FROM categories WHERE categoryID = :category_id';
-    // $statement = $conn->prepare($query);
-    // $statement->bindValue(':category_id', $category_id);
-    // $statement->execute();
-    // $category = $statement->fetch();
-    // $category_name = $category['categoryName'];
-    // $statement->closeCursor();
-
-    // var_dump($host);
-    // die();
-
-    //categories
-    $query = 'SELECT * FROM categories ORDER BY categoryID';
+    $query = 'SELECT * FROM categories WHERE categoryID = :categoryID';
     $statement = $conn->prepare($query);
-    // $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':categoryID', $categoryID);
     $statement->execute();
-    $categories = $statement->fetchAll();
+    $category = $statement->fetch();
+    $category_name = $category['categoryName'];
+    $statement->closeCursor();
+
+    //products
+    $query = 'SELECT * FROM products WHERE categoryID = :categoryID ORDER BY productID';
+    $statement = $conn->prepare($query);
+    $statement->bindValue(':categoryID', $categoryID);
+    $statement->execute();
+    $products = $statement->fetchAll();
     $statement->closeCursor();
 
     // var_dump($categories);
@@ -40,10 +37,22 @@ require_once('./includes/db.php');
 ?>
 <?php include './pages/views/header.php'; ?>
 
-            <div class="col-sm-6">
+<div class="col">
+    <h2><?php echo $category_name?></h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Description</th>
+        </thead>
 
-            </div>
-            <div class="col"></div>
+        <?php foreach($products as $product) : ?>
+        <tr>
+            <td><?php echo $product['productName']; ?></td>
+            <td><?php echo $product['description']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
         </div>
 </div>
 <?php include './pages/views/footer.php' ?>
