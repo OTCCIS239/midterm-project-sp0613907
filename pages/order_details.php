@@ -22,7 +22,7 @@ $statement->bindValue(':orderID', $orderID);
 $statement->execute();
 $details = $statement->fetchAll();
 $statement->closeCursor();
-var_dump($orderID);
+var_dump($details);
 die();
 ?>
 <?php include './header.php'; ?>
