@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 // This file initializes some goodies that will make your
 // development experience nicer! If your PHP throws an
 // error, we will show you exactly what went wrong!
@@ -8,7 +9,7 @@ require_once('../includes/init.php');
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('../includes/db.php');
 $orderID = 1;
-$query = 'SELECT orderID, CONCAT(firstName, " ", lastName) AS Name, emailAddress, orderDate
+$query = 'SELECT orderID, CONCAT(firstName, " ", lastName) AS Name, emailAddress, shipDate
           FROM customers
           JOIN orders ON customers.customerID = orders.customerID';
 $statement = $conn->prepare($query);
@@ -31,14 +32,14 @@ function clickableRow() {
           <thead class="thead-dark">
               <th>Name</th>
               <th>Email</th>
-              <th>Order Date</th>
+              <th>Ship Date</th>
               <th>       </th>
           </thead>
               <?php foreach ($orders as $order) : ?>
               <tr>
                 <td><?php echo $order['Name'] ?></td>
                 <td><?php echo $order['emailAddress'] ?></td>
-                <td><?php echo $order['orderDate'] ?></td>
+                <td><?php echo $order['shipDate']? Carbon::parse($order['shipDate']) : "Not Shipped" ?></td>
                 <td><a href="order_details.php?orderID=<?php echo $order['orderID']?>">More Info</a></td>
               </tr>
               <?php endforeach ?>

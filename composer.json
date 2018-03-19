@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "vlucas/phpdotenv": "^2.4",
-        "filp/whoops": "^2.1"
+        "filp/whoops": "^2.1",
+        "nesbot/carbon": "^1.24"
     },
     "license": "MIT",
     "authors": [
